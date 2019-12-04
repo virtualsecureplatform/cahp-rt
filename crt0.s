@@ -4,4 +4,4 @@ _start:
 	li sp, 0x200-2
 
 	jsal main
-	js 0
+	hlt
