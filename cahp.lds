@@ -7,9 +7,9 @@ PHDRS
 SECTIONS
 {
     . = 0x00000000;
-    .text : { *(.text) } :rom
+    .text : { *(.text .text.*) } :rom
     . = 0x00010002;
-    .data : { *(.data) } :ram
-    .rodata : { *(.rodata) } :ram
-    .bss : { *(.bss) } :ram
+    .data : { *(.data .data.*) } :ram
+    .rodata : { *(.rodata .rodata.*) } :ram
+    .bss : { *(.bss .bss.* COMMON) } :ram
 }
